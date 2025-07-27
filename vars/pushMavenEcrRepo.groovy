@@ -28,7 +28,6 @@ pipeline {
          steps{
              script
                 {
-
                     docker.withRegistry(ECRURL, ECRCRED)
                     {
                         docker.image(IMAGE).push()
@@ -37,7 +36,6 @@ pipeline {
             }
          }
     }
-
     post
     {
         always
@@ -46,6 +44,5 @@ pipeline {
             sh "docker rmi $IMAGE | true"
         }
     }
-
 }
 }
