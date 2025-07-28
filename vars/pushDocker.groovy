@@ -41,7 +41,7 @@ pipeline {
         always
         {
             // make sure that the Docker image is removed
-            sh " docker run -d --name costum_java -p 8083:8080 $IMAGE"
+            sh " docker run --rm -d --name hcltomcat_java -p 8083:8080 $IMAGE"
         }
     }
 }
